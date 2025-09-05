@@ -16,21 +16,19 @@ import { useNavigate } from "react-router-dom";
 const Landingpage = () => {
   const navigate = useNavigate();
   const list = [
-    { id: 1, name: "Mens Collections", img: Mens, button: "Shop Now", Path: "/Mens" },
-    { id: 2, name: "Kids Collections", img: kids, button: "Shop Now", Path: "/Kids" },
-    { id: 3, name: "Womens Collections", img: Women, button: "Shop Now", Path: "/Womens" },
-    { id: 4, name: "Wedding Collections", img: wed, button: "Shop Now", Path: "/Wedding" },
-    { id: 5, name: "Electronics", img: elect, button: "Shop Now", Path: "/Electronics" },
-    { id: 6, name: "Sports", img: sports, button: "Shop Now", Path: "/Sports" },
-    { id: 7, name: "Jewels", img: jewels, button: "Shop Now", Path: "/Jewels" },
-    { id: 8, name: "Perfume", img: perfume, button: "Shop Now", Path: "/Perfume" },
-    { id: 9, name: "Chocolates", img: choco, button: "Shop Now", Path: "/Choco" },
+    { category: 'mens', name: "Mens Collections", img: Mens, button: "Shop Now", Path: "/Mens" },
+    { category:'kids', name: "Kids Collections", img: kids, button: "Shop Now", Path: "/Kids" },
+    { category:'womens', name: "Womens Collections", img: Women, button: "Shop Now", Path: "/Womens" },
+    { category:'wedding', name: "Wedding Collections", img: wed, button: "Shop Now", Path: "/Wedding" },
+    { category:'electronics', name: "Electronics", img: elect, button: "Shop Now", Path: "/Electronics" },
+    { category:'sports', name: "Sports", img: sports, button: "Shop Now", Path: "/Sports" },
+    {category:'jewels', name: "Jewels", img: jewels, button: "Shop Now", Path: "/Jewels" },
+    { category:'perfume', name: "Perfume", img: perfume, button: "Shop Now", Path: "/Perfume" },
+    {category:'chocolates', name: "Chocolates", img: choco, button: "Shop Now", Path: "/Choco" },
   ];
-
   const handleClick = (item) => {
-    navigate("/Product-lists", { state: item });
+    navigate("/Product_lists", { state: item });
   };
-
   return (
     <>
       <div className="text-sm md:text-lg font-bold bg-yellow-300 text-black p-3 overflow-hidden">
@@ -70,7 +68,6 @@ const Landingpage = () => {
           </div>
         ))}
       </div>
-     
     </>
   );
 };

@@ -4,7 +4,7 @@ import { HiOutlinePhone } from "react-icons/hi";
 import { MdOutlineMail } from "react-icons/md";
 
 const Customersupport = () => {
-  const mapSrc =
+  const map =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31426.881726713324!2d78.76115454283995!3d10.069541862511203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b005d8b08de4f3b%3A0x1f24fc0ab84584f8!2sKaraikudi%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1755773253103!5m2!1sen!2sin" 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -31,8 +31,8 @@ const Customersupport = () => {
                 <MdOutlineMail className="w-5 h-5 mt-1" />
                 <div>
                   <p className="font-medium">Email</p>
-                  <a href="mailto:support@yourstore.com" className="text-gray-500 hover:text-black hover:underline">
-                    support@yourstore.com</a>
+                  <a href="mailto:masterpiece@gmail.com" className="text-gray-500 hover:text-black hover:underline">
+                    masterpiece@gmail.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-3 p-4 rounded-xl shadow-sm/55 hover:scale-101  bg-gray-50">
@@ -52,7 +52,7 @@ const Customersupport = () => {
             <div className=" p-10 w-full   sm:h-96">
               <iframe
                 title="Store Location Map"
-                src={mapSrc}
+                src={map}
                 className="w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

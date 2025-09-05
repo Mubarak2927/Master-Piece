@@ -18,19 +18,19 @@ import Footer from "../Shared/Footer";
 const Landingpage = () => {
   const navigate = useNavigate();
   const list = [
-    { id: 1, name: "Mens Collections", img: Mens, button: "Shop Now", Path: "/Mens" },
-    { id: 2, name: "Kids Collections", img: kids, button: "Shop Now", Path: "/Kids" },
-    { id: 3, name: "Womens Collections", img: Women, button: "Shop Now", Path: "/Womens" },
-    { id: 4, name: "Wedding Collections", img: wed, button: "Shop Now", Path: "/Wedding" },
-    { id: 5, name: "Electronics", img: elect, button: "Shop Now", Path: "/Electronics" },
-    { id: 6, name: "Sports", img: sports, button: "Shop Now", Path: "/Sports" },
-    { id: 7, name: "Jewels", img: jewels, button: "Shop Now", Path: "/Jewels" },
-    { id: 8, name: "Perfume", img: perfume, button: "Shop Now", Path: "/Perfume" },
-    { id: 9, name: "Chocolates", img: choco, button: "Shop Now", Path: "/Choco" },
+    {category:'mens', name: "Mens Collections", img: Mens, button: "Shop Now", Path: "/Mens" },
+    {category:'kids', name: "Kids Collections", img: kids, button: "Shop Now", Path: "/Kids" },
+    {category:'womens', name: "Womens Collections", img: Women, button: "Shop Now", Path: "/Womens" },
+    {category:'wedding', name: "Wedding Collections", img: wed, button: "Shop Now", Path: "/Wedding" },
+    {category:'electronics', name: "Electronics", img: elect, button: "Shop Now", Path: "/Electronics" },
+    {category:'sports', name: "Sports", img: sports, button: "Shop Now", Path: "/Sports" },
+    {category:'jewels', name: "Jewels", img: jewels, button: "Shop Now", Path: "/Jewels" },
+    {category:'perfume', name: "Perfume", img: perfume, button: "Shop Now", Path: "/Perfume" },
+    {category:'chocolates', name: "Chocolates", img: choco, button: "Shop Now", Path: "/Choco" },
   ];
 
   const handleClick = (item) => {
-    navigate("/Product-lists", { state: item });
+    navigate("/Product_lists", { state: item });  
   };
 
   return (
@@ -53,7 +53,6 @@ const Landingpage = () => {
         className="bg-gradient-to-br from-blue-500 via-blue-950 to-blue-500  text-white p-6 rounded-2xl shadow-lg/50 text-center transform transition duration-300 hover:scale-102 hover:shadow-2xl"
       >
         <p className="font-bold text-lg p-2 mb-3">{item.name}</p>
-
         <div className="flex justify-end">
           <button
             onClick={() => handleClick(item)}

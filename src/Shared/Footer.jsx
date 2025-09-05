@@ -10,7 +10,6 @@ function Footer() {
       <footer className="bg-gradient-to-tr from-blue-500 via-blue-800 to-blue-500 text-white">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 p-6 md:p-10">
           <div>
-            <h1 className="text-lg font-semibold pb-3">Company</h1>
             <img src={logoo} alt="logo" width={"70px"} className="mb-3" />
             <p className="text-sm leading-relaxed">
               Welcome to <span className="font-bold">MASTER PIECE</span>, your
@@ -37,19 +36,19 @@ function Footer() {
             <h1 className="text-lg font-semibold pb-3">Contact</h1>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-3 hover:text-black cursor-pointer">
-                <FaPhoneAlt /> +91-6345678912
+                <FaPhoneAlt /><a href="tel: +916345678912"> +91-6345678912</a>
               </li>
               <li className="flex items-center gap-3 hover:text-black cursor-pointer">
-                <IoLogoWhatsapp /> +91-9876543210
+                <IoLogoWhatsapp /><a href="tel:+919876543210">+91-9876543210</a> 
               </li>
               <li className="flex items-center gap-3 hover:text-black cursor-pointer">
-                <MdEmail /> sample@gmail.com
+                <MdEmail /><a href="mailto:masterpiece@gmail.com">masterpiece@gmail.com</a> 
               </li>
               <li className="flex items-center gap-3 hover:text-black cursor-pointer">
                 <IoLocationSharp /> Karaikudi
               </li>
             </ul>
-          </div>
+          </div>  
           <div>
             <h1 className="text-lg font-semibold pb-3">Email</h1>
             <div className="flex flex-col sm:flex-row gap-3">

@@ -36,9 +36,6 @@ function Header() {
           </li>
         </ul>
         <div className="hidden md:flex gap-4 items-center text-white">
-          <button className="text-2xl p-2 rounded  hover:scale-130 transition">
-            <FaRegHeart />
-          </button>
           <a href="/" className="text-3xl p-2 rounded  hover:scale-130 transition">
             <MdOutlineShoppingCart />
           </a>
@@ -74,9 +71,6 @@ function Header() {
           </li>
         </ul>
         <div className="flex justify-center gap-6 pt-6 text-2xl">
-          <button className="p-2 rounded hover:bg-gray-700 hover:scale-110 transition">
-            <FaRegHeart />
-          </button>
           <a href="/Cartitems" className="p-2 rounded hover:bg-gray-700 hover:scale-110 transition">
             <MdOutlineShoppingCart /></a>
           <a href="/Login"className="p-2 rounded hover:bg-gray-700 hover:scale-110 transition"><GoPersonFill /></a>

@@ -16,13 +16,11 @@ export const Sign = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Only digits for password & confirm_password
     if (name === "password" || name === "confirm_password") {
       if (/^\d*$/.test(value)) {
         setformData({ ...formData, [name]: value });
       }
     } else if (name === "number") {
-      // Phone number also only digits
       if (/^\d*$/.test(value)) {
         setformData({ ...formData, [name]: value });
       }
@@ -69,37 +67,43 @@ export const Sign = () => {
   };
 
   return (
-    <div className=" text-white w-full flex justify-center items-center min-h-screen px-4">
-      <div className="bg-blue-600 backdrop-blur-lg p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg/55 w-full max-w-md">
-        <h1 className="text-center text-2xl sm:text-3xl font-bold mb-5">
+    <div className="
+      text-white w-full flex justify-center items-center min-h-screen px-4 sm:px-6 lg:px-8">
+      
+      <div className="bg-blue-600/90 backdrop-blur-lg p-6 sm:p-8 md:p-10 
+        rounded-2xl shadow-xl w-full max-w-md sm:max-w-lg md:max-w-xl">
+        
+        <h1 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
           Create Your Account
         </h1>
-        <form onSubmit={formSubmit} className="space-y-4">
+
+        <form onSubmit={formSubmit} className="space-y-4 sm:space-y-5">
+          
           <div>
             <input
-              className="border w-full p-2 rounded-lg text-black outline-none"
+              className="border w-full p-2 sm:p-3 rounded-lg text-black outline-none text-sm sm:text-base"
               name="fname"
               type="text"
               placeholder="Full Name"
               value={formData.fname}
               onChange={handleChange}
             />
-            {error.fname && <p className="text-red-600 text-end text-sm mt-1">{error.fname}</p>}
+            {error.fname && <p className="text-red-500 text-end text-xs sm:text-sm mt-1">{error.fname}</p>}
           </div>
           <div>
             <input
-              className="border w-full p-2 rounded-lg text-black outline-none"
+              className="border w-full p-2 sm:p-3 rounded-lg text-black outline-none text-sm sm:text-base"
               name="email"
               type="text"
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
             />
-            {error.email && <p className="text-red-600 text-end text-sm mt-1">{error.email}</p>}
+            {error.email && <p className="text-red-500 text-end text-xs sm:text-sm mt-1">{error.email}</p>}
           </div>
           <div>
             <input
-              className="border w-full p-2 rounded-lg text-black outline-none"
+              className="border w-full p-2 sm:p-3 rounded-lg text-black outline-none text-sm sm:text-base"
               type="tel"
               maxLength={10}
               name="number"
@@ -107,11 +111,11 @@ export const Sign = () => {
               value={formData.number}
               onChange={handleChange}
             />
-            {error.number && <p className="text-red-600 text-end text-sm mt-1">{error.number}</p>}
+            {error.number && <p className="text-red-500 text-end text-xs sm:text-sm mt-1">{error.number}</p>}
           </div>
           <div>
             <input
-              className="border w-full p-2 rounded-lg text-black outline-none"
+              className="border w-full p-2 sm:p-3 rounded-lg text-black outline-none text-sm sm:text-base"
               value={formData.password}
               name="password"
               minLength={4}
@@ -121,11 +125,11 @@ export const Sign = () => {
               placeholder="Password"
               onChange={handleChange}
             />
-            {error.password && <p className="text-red-600 text-end text-sm mt-1">{error.password}</p>}
+            {error.password && <p className="text-red-500 text-end text-xs sm:text-sm mt-1">{error.password}</p>}
           </div>
           <div>
             <input
-              className="border w-full p-2 rounded-lg text-black outline-none"
+              className="border w-full p-2 sm:p-3 rounded-lg text-black outline-none text-sm sm:text-base"
               name="confirm_password"
               minLength={4}
               maxLength={10}
@@ -136,28 +140,31 @@ export const Sign = () => {
               onChange={handleChange}
             />
             {error.confirm_password && (
-              <p className="text-red-600 text-end text-sm mt-1">{error.confirm_password}</p>
+              <p className="text-red-500 text-end text-xs sm:text-sm mt-1">{error.confirm_password}</p>
             )}
           </div>
           <div className="flex justify-center">
             <button
               type="submit"
-              className="w-full border hover:bg-white hover:text-black hover:border-none p-2  rounded-lg hover:cursor-pointer hover:scale-105 text-white font-semibold transition transform "
+              className="w-full  border hover:bg-white hover:text-black 
+              hover:border-none px-6 py-2 sm:px-8 sm:py-3 rounded-lg hover:cursor-pointer 
+              hover:scale-105 text-white font-semibold transition transform "
             >
               Sign Up
             </button>
           </div>
           <div className="flex justify-center">
-            <button className="w-fit p-2 px-20 flex items-center justify-center gap-3 border hover:scale-105 hover:bg-white hover:border-none rounded-lg hover:text-black transition">
+            <button className="w-full  p-2 sm:px-20 flex items-center justify-center gap-3 border 
+              hover:scale-105 hover:bg-white hover:border-none rounded-lg hover:text-black transition">
               <img
                 src="https://static.vecteezy.com/system/resources/previews/046/861/647/non_2x/google-logo-transparent-background-free-png.png"
                 alt="google"
                 width="20px"
               />
-              <span className="text-sm font-medium">Sign up with Google</span>
+              <span className="text-sm sm:text-base font-medium">Sign up with Google</span>
             </button>
           </div>
-          <div className="flex gap-1 justify-center text-black text-base mt-4">
+          <div className="flex gap-1 justify-center text-xs sm:text-sm md:text-base text-black mt-4">
             <p>Already have an account?</p>
             <a
               href="/Login"
@@ -166,6 +173,7 @@ export const Sign = () => {
               Log in
             </a>
           </div>
+
         </form>
       </div>
     </div>
