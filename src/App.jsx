@@ -29,7 +29,7 @@ function App() {
       <Route path='/' element={<Landingpage/>}/>
       <Route path='/Login' element={<Login/>}/>
       <Route path='/Sign' element={<Sign/>}/>
-      <Route path='/Contact' element={<Customersupport/>}/>
+      <Route path='/ContactUs' element={<Customersupport/>}/>
       <Route path='/About' element={<About/>}/>
       <Route path='/Categories' element={<Categories/>}/>
       <Route path='/Product_lists' element={<Productlists />}/>
