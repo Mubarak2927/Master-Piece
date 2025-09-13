@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../Shared/Header";
 import Footer from "../Shared/Footer";
@@ -51,14 +51,13 @@ import { FaArrowAltCircleLeft } from "react-icons/fa";
 const Productlists = () => {
   const location = useLocation();
   const item = location.state;
+ useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
+  
 
 const navigate=useNavigate();
- 
-
-  
-
-  
-   
   const data = [
     { category:'mens',id: 1, name: "Shirt", img: Shirt, Price: "799", Description: "Comfortable cotton shirt suitable for office and casual wear.",
       About:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt veritatis at illum harum fuga placeat, ducimus maxime ad asperiores dignissimos consequatur blanditiis, accusamus tenetur minima quasi iste aut dolores exercitationem.'},

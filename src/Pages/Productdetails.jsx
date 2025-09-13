@@ -14,9 +14,9 @@ const ProductDetails = () => {
   }
 
   const totalPrice = quantity * product.Price;
+
   const addClick = (product) => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
     const existingItem = cart.find((item) => item.id === product.id);
 
     if (existingItem) {
@@ -35,9 +35,8 @@ const ProductDetails = () => {
   return (
     <div className="p-4 sm:p-6 md:p-10 max-w-7xl mx-auto">
       <button
-        // onClick={() => navigate('/Product_lists')}
-        className="text-2xl sm:text-3xl text-blue-600 cursor-pointer hover:text-black mb-4 sm:mb-6 flex items-center gap-2"
-      >
+        onClick={() => navigate(-1)}
+        className="text-2xl sm:text-3xl text-blue-600 cursor-pointer hover:text-black mb-4 sm:mb-6 flex items-center gap-2">
         <FaArrowAltCircleLeft /> Back
       </button>
 
@@ -45,10 +44,11 @@ const ProductDetails = () => {
         <img
           src={product.img}
           alt={product.name}
-          className="rounded-xl w-full sm:w-72 md:w-80 h-100 md:h-80 object-cover shadow-md hover:scale-105 transition"
-        />
+          className="rounded-xl w-full sm:w-72 md:w-80 h-100 md:h-80 object-cover shadow-md hover:scale-105 transition" />
         <div className="text-center md:text-left w-full">
-          <h1 className="text-2xl sm:text-3xl font-bold mb-2">{product.name}</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold mb-2">
+            {product.name}
+          </h1>
           <p className="text-gray-600 mb-4 text-sm sm:text-base">
             {product.Description}
             <p className="text-green-600 font-medium mt-1">
@@ -73,19 +73,17 @@ const ProductDetails = () => {
               <label className="mr-2 font-semibold text-sm sm:text-base">
                 Quantity:
               </label>
-               <select value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} className="rounded-md px-2 py-1 text-sm sm:text-base">
-                   <option value="1">1</option>
-                   <option value="2">2</option>
-                   <option value="3">3</option>
-                   <option value="4">4</option>
-                   <option value="5">5</option>
-                   <option value="6">6</option>
-                   <option value="7">7</option>
-                   <option value="8">8</option>
-                   <option value="9">9</option>
-                   <option value="10">10</option>
-                   </select>
-             
+              <select
+                value={quantity}
+                onChange={(e) => setQuantity(Number(e.target.value))}
+                className="rounded-md px-2 py-1 text-sm sm:text-base"
+              >
+                {Array.from({ length: 10 }, (_, i) => (
+                  <option key={i + 1} value={i + 1}>
+                    {i + 1}
+                  </option>
+                ))}
+              </select>
             </div>
             <p className="text-lg sm:text-xl font-bold text-red-600">
               Total : ₹{totalPrice}
@@ -95,12 +93,11 @@ const ProductDetails = () => {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <button
               onClick={() => addClick(product)}
-              className="bg-blue-600 hover:bg-black text-white px-5 sm:px-6 py-2 rounded-lg shadow-md w-full sm:w-auto"
-            >
+              className="bg-blue-600 hover:bg-black text-white px-5 sm:px-6 py-2 rounded-lg shadow-md w-full sm:w-auto">
               Add to Cart
             </button>
             <button className="bg-green-600 hover:bg-black text-white px-5 sm:px-6 py-2 rounded-lg shadow-md w-full sm:w-auto">
-             <a href="/Buy"> Buy Now</a>
+              <a href="/Buy"> Buy Now</a>
             </button>
           </div>
         </div>
