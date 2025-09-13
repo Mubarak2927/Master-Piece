@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { HiOutlinePhone } from "react-icons/hi";
 import { MdOutlineMail } from "react-icons/md";
 
 const Customersupport = () => {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const map =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31426.881726713324!2d78.76115454283995!3d10.069541862511203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b005d8b08de4f3b%3A0x1f24fc0ab84584f8!2sKaraikudi%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1755773253103!5m2!1sen!2sin" 
   return (

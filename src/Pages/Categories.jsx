@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
 import Mens from "../assets/cover.png";
@@ -17,6 +18,9 @@ import Footer from "../Shared/Footer";
 
 const Landingpage = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const list = [
     {category:'mens', name: "Mens Collections", img: Mens, button: "Shop Now", Path: "/Mens" },
     {category:'kids', name: "Kids Collections", img: kids, button: "Shop Now", Path: "/Kids" },

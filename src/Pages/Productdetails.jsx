@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 
 const ProductDetails = () => {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const location = useLocation();
   const navigate = useNavigate();
   const product = location.state;

@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import Header from "../Shared/Header";
 import Footer from "../Shared/Footer";
 
 const About = () => {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <>
  

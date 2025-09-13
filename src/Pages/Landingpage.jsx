@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../Shared/Header";
 import Footer from "../Shared/Footer";
 import Banner from "../assets/banner.jpg";
@@ -15,6 +15,9 @@ import { useNavigate } from "react-router-dom";
 
 const Landingpage = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   const list = [
     { category: "mens", name: "Mens Collections", img: Mens, button: "Shop Now", Path: "/Mens" },

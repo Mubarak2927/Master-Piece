@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "../Shared/Header";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
@@ -7,6 +8,9 @@ import Footer from "../Shared/Footer";
 const Cartitems = () => {
   const location = useLocation();
   const item = location.state;
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   return (
     <>

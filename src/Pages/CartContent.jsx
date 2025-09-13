@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 
 const CartContent = () => {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
